@@ -1,0 +1,37 @@
+[
+    {
+        "title": "図書館管理システム",
+        "theme": "クラス図",
+        "uml code": "@startuml\nclass Book {\n  - title: String\n  - author: String\n  - isbn: String\n  + borrow(): void\n}\nclass Member {\n  - name: String\n  - memberId: String\n  + borrowBook(b: Book): void\n}\nBook --> Member : borrows\n@enduml"
+    },
+    {
+        "title": "ソフトウェア開発ライフサイクル",
+        "theme": "アクティビティ図",
+        "uml code": "@startuml\nstart\n:Requirements Gathering;\n:Design;\n:Implementation;\nif (Testing Successful?) then (yes)\n  :Deployment;\nelse (no)\n  :Fix Bugs;\nendif\nstop\n@enduml"
+    },
+    {
+        "title": "銀行取引フロー",
+        "theme": "シーケンス図",
+        "uml code": "@startuml\nactor Customer\nparticipant Bank\nparticipant Account\nCustomer -> Bank: Request Balance\nBank -> Account: Retrieve Balance\nAccount --> Bank: Balance\nBank --> Customer: Display Balance\n@enduml"
+    },
+    {
+        "title": "学校管理システム",
+        "theme": "クラス図",
+        "uml code": "@startuml\nclass Student {\n  - name: String\n  - studentId: String\n  + enroll(course: Course): void\n}\nclass Course {\n  - courseName: String\n  - courseId: String\n  + addStudent(s: Student): void\n}\nStudent --> Course : enrolls\n@enduml"
+    },
+    {
+        "title": "宅配サービス",
+        "theme": "ユースケース図",
+        "uml code": "@startuml\nactor Customer\nactor DeliveryPerson\nCustomer -> (Place Order)\nDeliveryPerson -> (Deliver Package)\n@enduml"
+    },
+    {
+        "title": "プロジェクトタイムライン",
+        "theme": "ガント図",
+        "uml code": "@startgantt\n[Planning] lasts 3 days\n[Execution] starts at [Planning]'s end and lasts 7 days\n[Closure] starts at [Execution]'s end and lasts 2 days\n@endgantt"
+    },
+    {
+        "title": "スマートホームシステム",
+        "theme": "状態図",
+        "uml code": "@startuml\n[*] --> Idle\nIdle --> Activating : User Command\nActivating --> Active : System Ready\nActive --> Deactivating : User Command\nDeactivating --> Idle : System Standby\n@enduml"
+    }
+]
